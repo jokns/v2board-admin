@@ -303,7 +303,7 @@ export default function SystemConfigPage() {
       label: '订阅',
       children: (
         <div className="">
-          <ConfigItem title="节点域名解析 DNS（Mihomo）" description="每行一个 DNS 地址；留空保持客户端默认值。仅用于代理节点域名解析，不修改普通网站 DNS。">
+          <ConfigItem title="节点域名解析 DNS（Mihomo / Loon / sing-box）" description="每行一个 DNS 地址；留空保持客户端默认值。Loon 支持多个 DNS，sing-box 当前使用首个可用 DNS 作为节点解析器；Shadowrocket 普通节点订阅无法下发全局 DNS 配置。">
             <Input.TextArea
               rows={4}
               placeholder={'223.5.5.5\n119.29.29.29'}
