@@ -4,6 +4,9 @@ on:
     paths:
       - 'src/**'
       - '.github/workflows/node-dns-check.yml'
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
