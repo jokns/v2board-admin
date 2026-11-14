@@ -1,3 +1,4 @@
+import { NodeIpv4Toggle } from './NodeIpv4Toggle'
 import { Input, Select } from 'antd'
 import {
   DrawerActions,
@@ -41,6 +42,7 @@ export function ShadowsocksDrawer({ record, children }: NodeDrawerProps) {
       <NodeDrawerFrame server={server} visible={visible} onClose={onShow}>
         <div>
           <NameRateRow server={server} change={change} />
+          <NodeIpv4Toggle type="shadowsocks" id={Number(server.id) || undefined} />
           <TagsField server={server} change={change} />
           <GroupField server={server} change={change} />
           <div className="row">

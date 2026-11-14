@@ -1,3 +1,4 @@
+import { NodeIpv4Toggle } from './NodeIpv4Toggle'
 import { Input, Select } from 'antd'
 import { JsLink } from '@/components/JsLink'
 import { json4, NetworkSettingsEditor, PaddingSchemeEditor } from './editors'
@@ -131,6 +132,7 @@ export function V2nodeDrawer({ record, children }: NodeDrawerProps) {
       <NodeDrawerFrame server={server} visible={visible} onClose={onShow}>
         <div>
           <NameRateRow server={server} change={formChange} />
+          <NodeIpv4Toggle type="v2node" id={Number(server.id) || undefined} />
           <TagsField server={server} change={formChange} />
           <GroupField server={server} change={formChange} />
           <div className="row">

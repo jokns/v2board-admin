@@ -303,6 +303,14 @@ export default function SystemConfigPage() {
       label: '订阅',
       children: (
         <div className="">
+          <ConfigItem title="节点域名解析 DNS（Mihomo / Loon / sing-box）" description="每行一个 DNS 地址；留空保持客户端默认值。Loon 支持多个 DNS，sing-box 当前使用首个可用 DNS 作为节点解析器；Shadowrocket 普通节点订阅无法下发全局 DNS 配置。">
+            <Input.TextArea
+              rows={4}
+              placeholder={'223.5.5.5\n119.29.29.29'}
+              value={Array.isArray(subscribe.proxy_node_dns_servers) ? subscribe.proxy_node_dns_servers.join('\n') : ''}
+              onChange={(e) => set('subscribe', 'proxy_node_dns_servers')(e.target.value.split(/\r?\n/).map((v) => v.trim()).filter(Boolean))}
+            />
+          </ConfigItem>
           <ConfigItem title="允许用户更改订阅" description="开启后用户将会可以对订阅计划进行变更。">
             {toggle('subscribe', 'plan_change_enable')}
           </ConfigItem>

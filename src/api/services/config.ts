@@ -22,3 +22,7 @@ export const fetchSubscribeNodeWhitelistRules = () =>
   get<NodeWhitelistRule[]>(adminPath('/config/fetchSubscribeNodeWhitelistRules'))
 export const saveSubscribeNodeWhitelistRules = (rules: NodeWhitelistRule[]) =>
   post<boolean>(adminPath('/config/saveSubscribeNodeWhitelistRules'), { rules }, true)
+
+export const fetchNodeIpv4Settings = () => get<Record<string, boolean>>(adminPath('/config/fetchNodeIpv4Settings'))
+export const saveNodeIpv4Settings = (type: string, id: number, enabled: boolean) =>
+  post<boolean>(adminPath('/config/saveNodeIpv4Settings'), { type, id, enabled }, true)
