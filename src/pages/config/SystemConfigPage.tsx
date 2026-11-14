@@ -306,9 +306,9 @@ export default function SystemConfigPage() {
           <ConfigItem title="节点域名解析 DNS（Mihomo）" description="每行一个 DNS 地址；留空保持客户端默认值。仅用于代理节点域名解析，不修改普通网站 DNS。">
             <Input.TextArea
               rows={4}
-              placeholder={'223.5.5.5\\n119.29.29.29'}
-              value={Array.isArray(subscribe.proxy_node_dns_servers) ? subscribe.proxy_node_dns_servers.join('\\n') : ''}
-              onChange={(e) => set('subscribe', 'proxy_node_dns_servers')(e.target.value.split(/\\r?\\n/).map((v) => v.trim()).filter(Boolean))}
+              placeholder={'223.5.5.5\n119.29.29.29'}
+              value={Array.isArray(subscribe.proxy_node_dns_servers) ? subscribe.proxy_node_dns_servers.join('\n') : ''}
+              onChange={(e) => set('subscribe', 'proxy_node_dns_servers')(e.target.value.split(/\r?\n/).map((v) => v.trim()).filter(Boolean))}
             />
           </ConfigItem>
           <ConfigItem title="允许用户更改订阅" description="开启后用户将会可以对订阅计划进行变更。">
